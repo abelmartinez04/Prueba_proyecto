@@ -69,4 +69,30 @@ class UserUtils
         $stmt->bindParam(':pass',  $new_password, PDO::PARAM_STR);
         return $stmt->execute();
     }
+
+    #Para manejar admins
+    public static function getAllUsersWithRoles() {
+        $db = \App\Config\Database::getConnection();
+        $query = "
+            SELECT u.id, u.username, u.email, u.phone, GROUP_CONCAT(r.role_name) as roles
+            FROM users u
+            LEFT JOIN user_roles ur ON u.id = ur.user_id
+            LEFT JOIN roles r ON ur.role_id = r.id
+            GROUP BY u.id
+        ";
+        return $db->query($query)->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public static function clearRoles($userId) {
+        $db = \App\Config\Database::getConnection();
+        $stmt = $db->prepare("DELETE FROM user_roles WHERE user_id = ?");
+        $stmt->execute([$userId]);
+    }
+
+    public static function assignRole($userId, $roleId) {
+        $db = \App\Config\Database::getConnection();
+        $stmt = $db->prepare("INSERT INTO user_roles (user_id, role_id) VALUES (?, ?)");
+        $stmt->execute([$userId, $roleId]);
+    }
+
 }
