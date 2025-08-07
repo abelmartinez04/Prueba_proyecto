@@ -32,6 +32,59 @@ const ROUTES = [
     'auth/GoogleController.php'            => ['controller' => \App\Controllers\Auth\GoogleController::class],
     'auth/MicrosoftController.php'         => ['controller' => \App\Controllers\Auth\MicrosoftController::class],
     'auth/MicrosoftCallbackController.php' => ['controller' => \App\Controllers\Auth\MicrosoftCallbackController::class],
+
+    // Super admin entities CRUD
+    'super/admin_entities/provinces/index.php'      => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/provinces/create.php'     => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/provinces/edit.php'       => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+
+    //Vistas de los cruds
+    'admin_entities/provinces/index' => [AdminEntityController::class, 'listProvinces'],
+    'admin_entities/provinces/create' => [AdminEntityController::class, 'createProvinceForm'],
+    'admin_entities/provinces/store' => [AdminEntityController::class, 'storeProvince'],
+    'admin_entities/provinces/edit' => [AdminEntityController::class, 'editProvinceForm'],
+    'admin_entities/provinces/update' => [AdminEntityController::class, 'updateProvince'],
+    'admin_entities/provinces/delete' => [AdminEntityController::class, 'deleteProvince'],
+
+    // SUPER ADMIN ENTITIES: MUNICIPALITIES
+    'super/admin_entities/municipalities/index.php'  => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/municipalities/create.php' => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/municipalities/edit.php'   => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+
+    // CRUD: MUNICIPALITIES
+    'admin_entities/municipalities/index'   => [AdminEntityController::class, 'listMunicipalities'],
+    'admin_entities/municipalities/create'  => [AdminEntityController::class, 'createMunicipalityForm'],
+    'admin_entities/municipalities/store'   => [AdminEntityController::class, 'storeMunicipality'],
+    'admin_entities/municipalities/edit'    => [AdminEntityController::class, 'editMunicipalityForm'],
+    'admin_entities/municipalities/update'  => [AdminEntityController::class, 'updateMunicipality'],
+    'admin_entities/municipalities/delete'  => [AdminEntityController::class, 'deleteMunicipality'],
+
+    // SUPER ADMIN ENTITIES: NEIGHBORHOODS
+    'super/admin_entities/neighborhoods/index.php'  => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/neighborhoods/create.php' => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/neighborhoods/edit.php'   => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+
+    // CRUD: NEIGHBORHOODS
+    'admin_entities/neighborhoods/index'   => [AdminEntityController::class, 'listNeighborhoods'],
+    'admin_entities/neighborhoods/create'  => [AdminEntityController::class, 'createNeighborhoodForm'],
+    'admin_entities/neighborhoods/store'   => [AdminEntityController::class, 'storeNeighborhood'],
+    'admin_entities/neighborhoods/edit'    => [AdminEntityController::class, 'editNeighborhoodForm'],
+    'admin_entities/neighborhoods/update'  => [AdminEntityController::class, 'updateNeighborhood'],
+    'admin_entities/neighborhoods/delete'  => [AdminEntityController::class, 'deleteNeighborhood'],
+
+    // SUPER ADMIN ENTITIES: TAGS
+    'super/admin_entities/tags/index.php'  => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/tags/create.php' => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/tags/edit.php'   => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+
+    // CRUD: TAGS
+    'admin_entities/tags/index'   => [AdminEntityController::class, 'listTags'],
+    'admin_entities/tags/create'  => [AdminEntityController::class, 'createTagForm'],
+    'admin_entities/tags/store'   => [AdminEntityController::class, 'storeTag'],
+    'admin_entities/tags/edit'    => [AdminEntityController::class, 'editTagForm'],
+    'admin_entities/tags/update'  => [AdminEntityController::class, 'updateTag'],
+    'admin_entities/tags/delete'  => [AdminEntityController::class, 'deleteTag'],
+
 ];
 
 // Crear pdo
