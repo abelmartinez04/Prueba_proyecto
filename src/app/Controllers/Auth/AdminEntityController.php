@@ -132,7 +132,7 @@ class AdminEntityController
     }
 
 
-    // Etiquetas (Tags)
+    // Labels
     public function listTags($template, $pdo) {
         $tags = TagUtils::getAll($pdo);
         $template->apply('super/admin_entities/tags/index', ['tags' => $tags]);

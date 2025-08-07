@@ -72,18 +72,18 @@ const ROUTES = [
     'admin_entities/neighborhoods/update'  => [AdminEntityController::class, 'updateNeighborhood'],
     'admin_entities/neighborhoods/delete'  => [AdminEntityController::class, 'deleteNeighborhood'],
 
-    // SUPER ADMIN ENTITIES: TAGS
-    'super/admin_entities/tags/index.php'  => ['controller' => \App\Controllers\Super\AdminEntityController::class],
-    'super/admin_entities/tags/create.php' => ['controller' => \App\Controllers\Super\AdminEntityController::class],
-    'super/admin_entities/tags/edit.php'   => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    // SUPER ADMIN ENTITIES: labels
+    'super/admin_entities/labels/index.php'  => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/labels/create.php' => ['controller' => \App\Controllers\Super\AdminEntityController::class],
+    'super/admin_entities/labels/edit.php'   => ['controller' => \App\Controllers\Super\AdminEntityController::class],
 
-    // CRUD: TAGS
-    'admin_entities/tags/index'   => [AdminEntityController::class, 'listTags'],
-    'admin_entities/tags/create'  => [AdminEntityController::class, 'createTagForm'],
-    'admin_entities/tags/store'   => [AdminEntityController::class, 'storeTag'],
-    'admin_entities/tags/edit'    => [AdminEntityController::class, 'editTagForm'],
-    'admin_entities/tags/update'  => [AdminEntityController::class, 'updateTag'],
-    'admin_entities/tags/delete'  => [AdminEntityController::class, 'deleteTag'],
+    // CRUD: labels
+    'admin_entities/labels/index'   => [AdminEntityController::class, 'listLabels'],
+    'admin_entities/labels/create'  => [AdminEntityController::class, 'createLabelForm'],
+    'admin_entities/labels/store'   => [AdminEntityController::class, 'storeLabel'],
+    'admin_entities/labels/edit'    => [AdminEntityController::class, 'editLabelForm'],
+    'admin_entities/labels/update'  => [AdminEntityController::class, 'updateLabel'],
+    'admin_entities/labels/delete'  => [AdminEntityController::class, 'deleteLabel'],
 
 ];
 
