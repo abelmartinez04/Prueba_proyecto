@@ -131,37 +131,39 @@ class AdminEntityController
         header('Location: index.php?route=admin_entities/neighborhoods/index.php');
     }
 
-
     // Labels
-    public function listTags($template, $pdo) {
-        $tags = TagUtils::getAll($pdo);
-        $template->apply('super/admin_entities/tags/index', ['tags' => $tags]);
+    public function listLabels($template, $pdo) {
+        $labels = LabelUtils::getAll($pdo);
+        $template->apply('super/admin_entities/labels/index', ['labels' => $labels]);
     }
 
-    public function createTagForm($template) {
-        $template->apply('super/admin_entities/tags/create');
+    public function createLabelForm($template) {
+        $template->apply('super/admin_entities/labels/create');
     }
 
-    public function storeTag($template, $pdo) {
-        TagUtils::create($pdo, $_POST);
-        header('Location: index.php?route=admin_entities/tags/index.php');
+    public function storeLabel($template, $pdo) {
+        LabelUtils::create($pdo, $_POST);
+        header('Location: index.php?route=admin_entities/labels/index.php');
+        exit();
     }
 
-    public function editTagForm($template, $pdo) {
+    public function editLabelForm($template, $pdo) {
         $id = $_GET['id'] ?? null;
-        $tag = TagUtils::getById($pdo, $id);
-        $template->apply('super/admin_entities/tags/edit', ['tag' => $tag]);
+        $label = LabelUtils::getById($pdo, $id);
+        $template->apply('super/admin_entities/labels/edit', ['label' => $label]);
     }
 
-    public function updateTag($template, $pdo) {
-        TagUtils::update($pdo, $_POST['id'], $_POST);
-        header('Location: index.php?route=admin_entities/tags/index.php');
+    public function updateLabel($template, $pdo) {
+        LabelUtils::update($pdo, $_POST['id'], $_POST);
+        header('Location: index.php?route=admin_entities/labels/index.php');
+        exit();
     }
 
-    public function deleteTag($template, $pdo) {
+    public function deleteLabel($template, $pdo) {
         $id = $_GET['id'] ?? null;
-        TagUtils::delete($pdo, $id);
-        header('Location: index.php?route=admin_entities/tags/index.php');
+        LabelUtils::delete($pdo, $id);
+        header('Location: index.php?route=admin_entities/labels/index.php');
+        exit();
     }
 
 }
